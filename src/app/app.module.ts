@@ -1,3 +1,4 @@
+import { HeroService } from './services/hero.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, enableProdMode } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -6,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { CountersComponent } from './paginas/counters/counters.component';
 import { HomeComponent } from './paginas/home/home.component';
+import { ListaComponent } from './paginas/counters/lista/lista.component';
 
 const appRoutes: Routes = [
   { path: 'counters', component: CountersComponent },
@@ -17,7 +19,8 @@ const appRoutes: Routes = [
     AppComponent,
     MenuPrincipalComponent,
     CountersComponent,
-    HomeComponent
+    HomeComponent,
+    ListaComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ const appRoutes: Routes = [
       { enableTracing: true}
     )
   ],
-  providers: [],
+  providers: [HeroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
