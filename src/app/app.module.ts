@@ -2,12 +2,14 @@ import { HeroService } from './services/hero.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, enableProdMode } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { CountersComponent } from './paginas/counters/counters.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { ListaComponent } from './paginas/counters/lista/lista.component';
+import { HeroFiltroPipe } from './paginas/counters/pipe/hero-filtro.pipe';
 
 const appRoutes: Routes = [
   { path: 'counters', component: CountersComponent },
@@ -20,14 +22,13 @@ const appRoutes: Routes = [
     MenuPrincipalComponent,
     CountersComponent,
     HomeComponent,
-    ListaComponent
+    ListaComponent,
+    HeroFiltroPipe
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true}
-    )
+    RouterModule.forRoot(appRoutes, { enableTracing: true}),
+    FormsModule
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 export interface IHero {
     nome: String;
-    atributos: Object;
+    atributos: Iterable<Object>;
     habilidades: Iterable<Object>;
 }

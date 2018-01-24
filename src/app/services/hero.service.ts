@@ -1,15 +1,13 @@
+import { heroList } from './../mocking/heroes.mock';
 import { Injectable } from '@angular/core';
+import { Hero } from '../classes/Hero';
 
 @Injectable()
 export class HeroService {
 
   constructor() { }
 
-  public getHeroes(): Object {
-    return [
-      {"nome": "Axe","atributos": [{"nome": "attr 1", "valor": "13"}] , "habilidades":[{"nome": "habilidade 1", "valor": "45"}]},
-      {"nome": "Sniper","atributos": [{"nome": "attr 1", "valor": "13"}] , "habilidades":[{"nome": "habilidade 1", "valor": "45"}]},
-      {"nome": "Phanton Assasing","atributos": [{"nome": "attr 1", "valor": "13"}] , "habilidades":[{"nome": "habilidade 1", "valor": "45"}]},
-      {"nome": "Silencer","atributos": [{"nome": "attr 1", "valor": "13"}] , "habilidades":[{"nome": "habilidade 1", "valor": "45"}]}];
+  public getHeroes(): Iterable<Hero> {
+    return heroList;
   }
 }
