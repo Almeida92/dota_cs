@@ -15,9 +15,10 @@
           </ul>
       </div>
       <div class="col-md-6 col-xs-6 card-hero">
-        <img src="assets/img/{{selectedHero.img}}" alt="{{selectedHero.nome}}" *ngIf="selectedHero" class="img-responsive">
+        <img data-toggle="modal" data-target="#heroDetalhe" src="assets/img/{{selectedHero.img}}" alt="{{selectedHero.nome}}" *ngIf="selectedHero" class="img-responsive">
         <p>{{selectedHero.nome}}</p>
       </div>
+      <app-hero-detalhe [hero]="selectedHero"></app-hero-detalhe>
     </div>
 </div>
 

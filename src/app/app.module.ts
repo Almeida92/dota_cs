@@ -10,6 +10,7 @@ import { CountersComponent } from './paginas/counters/counters.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { ListaComponent } from './paginas/counters/lista/lista.component';
 import { HeroFiltroPipe } from './paginas/counters/pipe/hero-filtro.pipe';
+import { HeroDetalheComponent } from './paginas/counters/lista/hero-detalhe/hero-detalhe.component';
 
 const appRoutes: Routes = [
   { path: 'counters', component: CountersComponent },
@@ -23,7 +24,8 @@ const appRoutes: Routes = [
     CountersComponent,
     HomeComponent,
     ListaComponent,
-    HeroFiltroPipe
+    HeroFiltroPipe,
+    HeroDetalheComponent
   ],
   imports: [
     BrowserModule,
