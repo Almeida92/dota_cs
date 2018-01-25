@@ -9,7 +9,7 @@ import { IHero } from '../../../classes/IHero';
 })
 export class ListaComponent implements OnInit {
   private heroes: Iterable<IHero>;
-  private selectHero: IHero;
+  private selectedHero: IHero;
 
   constructor(private heroService: HeroService) {
 
@@ -24,6 +24,6 @@ export class ListaComponent implements OnInit {
   }
 
   selecionarHero(hero: IHero): void {
-    this.selectHero = hero;
+    this.selectedHero = hero;
   }
 }
