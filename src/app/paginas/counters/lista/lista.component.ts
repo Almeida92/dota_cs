@@ -1,5 +1,6 @@
 import { HeroService } from './../../../services/hero.service';
 import { Component, OnInit } from '@angular/core';
+import { IHero } from '../../../classes/IHero';
 
 @Component({
   selector: 'app-lista',
@@ -7,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista.component.scss']
 })
 export class ListaComponent implements OnInit {
+  private heroes: Iterable<IHero>;
+  private selectHero: IHero;
 
-  constructor(private heroService: HeroService) { }
+  constructor(private heroService: HeroService) {
 
-  heroes: Object;
+  }
 
   ngOnInit() {
     this.getHeroes();
@@ -20,4 +23,7 @@ export class ListaComponent implements OnInit {
     this.heroes = this.heroService.getHeroes();
   }
 
+  selecionarHero(hero: IHero): void {
+    this.selectHero = hero;
+  }
 }

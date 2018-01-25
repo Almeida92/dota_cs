@@ -1,7 +1,5 @@
 import { IHero } from './IHero';
 
 export class Hero implements IHero {
-    nome: String;
-    atributos: Iterable<object>;
-    habilidades: Iterable<Object>;
+    constructor(public nome: String, public atributos: Iterable<object>, public habilidades: Iterable<Object>) {}
 }
